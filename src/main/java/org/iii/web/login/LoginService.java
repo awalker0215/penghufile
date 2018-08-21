@@ -62,5 +62,33 @@ public class LoginService {
 		loginRepository.deleteUser(username);
 	
 	}
+	//-----------------------------------
+	public List getUserinfo(String username) {
+
+		List userallinfo = loginRepository.selectUserall(username);
+		return userallinfo;
 	
+	}
+	public List selectUserlist() {
+
+		List userlist = loginRepository.selectUserlist();
+		return userlist;
+	
+	}
+	public String selectUserfilenum(String username) {
+
+		String userallfilenum = loginRepository.selectUserfilenum(username);
+		return userallfilenum;
+	}
+	public String userlogincheck(String username) {
+
+		String userlogincheck = loginRepository.userlogincheck(username);
+		return userlogincheck;
+	}
+	public int updatetUser(String unitaddress,String unitname,String unitphone,String unitresponse,String uniturl,String unityear,String username) {
+
+		int updateCount = loginRepository.updatetUser(unitaddress, unitname, unitphone, unitresponse, uniturl, unityear, username);
+		return updateCount;
+	
+	}
 }

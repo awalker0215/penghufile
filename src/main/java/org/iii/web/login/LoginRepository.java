@@ -54,9 +54,9 @@ public class LoginRepository {
 
 	}
 	
-	public Map<String, Object> selectUserall(String username){
+	public List selectUserall(String username){
 		String sql = "SELECT * FROM users WHERE username =?" ; 
-		Map<String, Object> map = this.jdbcTemplate.queryForMap(sql);		
+		List map = this.jdbcTemplate.queryForList(sql,username);		
 		return map ; 
 
 	}
@@ -82,5 +82,32 @@ public class LoginRepository {
 		this.jdbcTemplate.update(sql,username);	
 
 	}
+	public String selectUserfilenum(String username){
+		String sql = "SELECT COUNT(pid) FROM publication WHERE username =?" ; 
+		String userallfilenum = this.jdbcTemplate.queryForObject(sql,String.class,username); 
+		return userallfilenum ; 
+
+	}
+	public List selectUserlist(){
+		String sql = "SELECT u.*,COUNT(p.pid) as allc,Count(p.file) as fc,MAX(p.uploadTime) as lasttime FROM `users` as u left join publication as p on u.username = p.username group by u.username" ; 
+		List map = this.jdbcTemplate.queryForList(sql);		
+		return map ; 
+
+	}
+	public String userlogincheck(String username){
+		String sql = "SELECT logined FROM users WHERE username =?" ; 
+		String userlogincheck = this.jdbcTemplate.queryForObject(sql,String.class,username); 
+		return userlogincheck ; 
+
+	}
+	public int updatetUser(String unitaddress,String unitname,String unitphone,String unitresponse,String uniturl,String unityear,String username)
+	{ 
+		String sql = "UPDATE users SET gName = ?,reponse = ?,address=?,year = ?,phone = ?,url = ?,logined=? WHERE username = ?;";
+		int updateCount = jdbcTemplate.update(sql,
+				new Object[] { unitname, unitresponse, unitaddress, unityear,unitphone,uniturl,"1",username });
+		return updateCount;
+
+	}
+	//-----------------------------
 	
 }

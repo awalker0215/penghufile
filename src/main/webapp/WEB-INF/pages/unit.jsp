@@ -3,7 +3,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@page session="true"%>
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
@@ -71,26 +70,34 @@
   <hr>
 </div>
 <div class="container">
-  <div>
-	  <h3>登入</h3>
-	 <form name='loginForm'
-			action="<c:url value='/j_spring_security_check' />" method='POST'>
-	  <div class="form-group">
-		<label for="exampleInputEmail1">帳號</label>
-		<input type="text" name='username' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="請輸入帳號">
-	  </div>
-	  <div class="form-group">
-		<label for="exampleInputPassword1">密碼</label>
-		<input type="password" name='password' class="form-control" id="exampleInputPassword1" placeholder="請輸入密碼">
-	  </div>
-	  <tr>
-		<td colspan='2'><input class="btn btn-primary" name="submit" type="submit"
-		value="送出" /></td>
-	  </tr>
-	  <input type="hidden" name="${_csrf.parameterName}"
-				value="${_csrf.token}" />
-	</form>
-
+  <h3>單位列表</h3>
+  <div class="row">
+    <div class="text-center col-md-12">
+        <table class="table">
+		  <thead class="thead-dark">
+			<tr>
+			  <!-- <th scope="col">#</th> -->
+			  <th scope="col">分類</th>
+			  <th scope="col">單位名稱</th>
+			  <th scope="col">所有文件數</th>
+			  <th scope="col">已上傳數量</th>
+			  <th scope="col">最近更新時間</th>
+			</tr>
+		  </thead>
+		  <tbody>
+		  	<c:forEach items="${userlist}" var="p">
+				<tr>
+			  		<!-- <th scope="row">1</th> -->
+			  		<td>${p.usergroup}</td>
+			  		<td><a href="/inventory?uname=${p.username}">${p.gName}</td>
+			  		<td>${p.allc}</td>
+			  		<td>${p.fc}</td>
+			  		<td>${p.lasttime}</td>
+				</tr>
+			</c:forEach>
+		  </tbody>
+		</table>
+    </div>
   </div>
   <hr>
   <div class="row">

@@ -4,6 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@page session="true"%>
+<%@ page language="java" import="java.sql.*" %>
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
@@ -70,25 +71,40 @@
   </div>
   <hr>
 </div>
-<div class="container">
-  <div>
-	  <h3>登入</h3>
-	 <form name='loginForm'
-			action="<c:url value='/j_spring_security_check' />" method='POST'>
-	  <div class="form-group">
-		<label for="exampleInputEmail1">帳號</label>
-		<input type="text" name='username' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="請輸入帳號">
+<div class="container col-md-6">
+	<h3>基本資料</h3>
+  	<div class="">
+	  
+	 <form name='insertForm' action="updategov" method='POST'>
+	  <div class="form-group row"><!--class="text-center form-control"form-group row-->
+		<label class="col-sm-4 col-form-label">單位名稱</label>
+		<div class="col-sm-8">
+			<input type="text" name="unitname" class="form-control fineTuneTopInput" id="" placeholder="">
+		</div>
+		<label class="col-sm-4 col-form-label">設立年代</label>
+		<div class="col-sm-8">
+			<input type="text" name="unityear" placeholder="" class="form-control fineTuneTopInput" id="" >
+		</div>
+		<label class="col-sm-4 col-form-label">負責人</label>
+		<div class="col-sm-8">
+			<input type="text" name="unitresponse" class="form-control fineTuneTopInput" id="datepicker">
+		</div> 
+		<label class="col-sm-4 col-form-label">連絡電話</label>
+		<div class="col-sm-8">
+			<input type="text" name="unitphone" class="form-control fineTuneTopInput" id="">
+		</div>
+		<label class="col-sm-4 col-form-label">單位地址</label>
+		<div class="col-sm-8">
+			<input type="text" name="unitaddress" class="form-control fineTuneTopInput" id="">
+		</div>
+		<label class="col-sm-4 col-form-label">單位網址</label>
+		<div class="col-sm-8">
+			<input type="text" name="uniturl" class="form-control fineTuneTopInput" id="">
+		</div>
 	  </div>
-	  <div class="form-group">
-		<label for="exampleInputPassword1">密碼</label>
-		<input type="password" name='password' class="form-control" id="exampleInputPassword1" placeholder="請輸入密碼">
-	  </div>
-	  <tr>
-		<td colspan='2'><input class="btn btn-primary" name="submit" type="submit"
-		value="送出" /></td>
-	  </tr>
+	  <input type="submit" class="btn btn-primary" value="送出">
 	  <input type="hidden" name="${_csrf.parameterName}"
-				value="${_csrf.token}" />
+				value="${_csrf.token}" /> 
 	</form>
 
   </div>

@@ -3,7 +3,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@page session="true"%>
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
@@ -70,27 +69,79 @@
   </div>
   <hr>
 </div>
-<div class="container">
-  <div>
-	  <h3>登入</h3>
-	 <form name='loginForm'
-			action="<c:url value='/j_spring_security_check' />" method='POST'>
-	  <div class="form-group">
-		<label for="exampleInputEmail1">帳號</label>
-		<input type="text" name='username' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="請輸入帳號">
-	  </div>
-	  <div class="form-group">
-		<label for="exampleInputPassword1">密碼</label>
-		<input type="password" name='password' class="form-control" id="exampleInputPassword1" placeholder="請輸入密碼">
-	  </div>
-	  <tr>
-		<td colspan='2'><input class="btn btn-primary" name="submit" type="submit"
-		value="送出" /></td>
-	  </tr>
-	  <input type="hidden" name="${_csrf.parameterName}"
-				value="${_csrf.token}" />
-	</form>
 
+<!-- admin 顯示區塊 -->
+<sec:authorize access="!hasRole('ROLE_USER') and hasRole('ROLE_ADMIN')">
+<div class="container col-md-6" id="unitDetail">
+  <div class="row text-center">
+    <div class="col-md-12 col-md-offset-3">
+		<h3>單位A</h3>
+	</div>
+  </div>
+  <hr>
+  <div class="row col-md-12">
+    <div class="col-sm-6 text-center"> 
+		<h5>基本資料</h5>
+		<div class="text-justify">
+			<p><strong>設立年代</strong>&nbsp;1995</p>
+			<p><strong>負責人</strong>&nbsp;王大明</p>
+			<p><strong>電話</strong>&nbsp;06-9876630</p>
+			<p><strong>地址</strong>&nbsp;澎湖縣馬公市XX路XXX號</p>
+			<p><strong>網址</strong>&nbsp;<a href="http://google.com">www.xxx.gov.tw</a></p>
+		</div>
+	</div>
+	<div class="text-center col-sm-6"> 
+		<div>
+			<p>此單位有<h4>5</h4>個文化檔案</p>
+		</div>
+	</div>
+  </div>
+</div>
+</sec:authorize>
+<div class="container">
+  <hr>
+  <h3>上傳檔案列表</h3>
+  <div class="row">
+    <div class="text-center col-md-12">
+        <table class="table">
+		  <thead class="thead-dark">
+			<tr>
+			  <th scope="col">#</th>
+			  <th scope="col">出版品型態</th>
+			  <th scope="col">出版品名稱</th>
+			  <th scope="col">出版年月</th>
+			  <th scope="col">上傳日期</th>
+			  <th scope="col">檔案下載</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<tr>
+			  <th scope="row">1</th>
+			  <td>全文電子檔</td>
+			  <td>澎湖文化</td>
+			  <td>2015/5</td>
+			  <td>2018/05/20</td>
+			  <td><a href="#">下載</a></td>
+			</tr>
+			<tr>
+			  <th scope="row">2</th>
+			  <td>全文電子檔</td>
+			  <td>澎湖文化</td>
+			  <td>2015/5</td>
+			  <td>2018/05/20</td>
+			  <td><a href="#">下載</a></td>
+			</tr>
+			<tr>
+			  <th scope="row">3</th>
+			  <td>全文電子檔</td>
+			  <td>澎湖文化</td>
+			  <td>2015/5</td>
+			  <td>2018/05/20</td>
+			  <td><a href="#">下載</a></td>
+			</tr>
+		  </tbody>
+		</table>
+    </div>
   </div>
   <hr>
   <div class="row">

@@ -22,13 +22,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 public class LoginController {
 	@Resource(name = "LoginService")
 	LoginService loginService;
 
-	@RequestMapping(value = { "/", "/welcome**" }, method = RequestMethod.GET)
+	/*@RequestMapping(value = { "/", "/welcome**" }, method = RequestMethod.GET)
 	public ModelAndView defaultPage() {
 
 		
@@ -54,11 +55,129 @@ public class LoginController {
 	        }
 		}
 
-		model.setViewName("hello");
+		model.setViewName("govdetail");
 		return model;
 
+	}*/
+	//-----------------------------------
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public ModelAndView defaultPage() {
+		
+		ModelAndView model = new ModelAndView();
+		
+		model.setViewName("../../index");
+		
+		return model;
 	}
-	
+	@RequestMapping(value = "/govdetail", method = RequestMethod.GET)
+	public ModelAndView govdetailPage(HttpServletRequest request,
+			HttpServletResponse response) {
+		
+		ModelAndView model = new ModelAndView();
+		String uname = "";
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if (!(auth instanceof AnonymousAuthenticationToken)) {
+			UserDetails userDetail = (UserDetails) auth.getPrincipal();
+			for (GrantedAuthority authority : userDetail.getAuthorities()) {
+	            if (authority.getAuthority().equals("ROLE_ADMIN"))
+	            {
+	            	String username = userDetail.getUsername();
+	            	if(((String) request.getParameter("uname"))==null)
+	            	{
+	            		username = userDetail.getUsername();
+	            	}
+	            	else
+	            	{
+	            		username = (String) request.getParameter("uname");
+	            	}
+	            	uname = username;
+	    			List userinfo = loginService.getUserinfo(username);
+	    			model.addObject("userinfo", userinfo);
+	    			//filenum
+	    			String selectUserfilenum = loginService.selectUserfilenum(username);
+	    			model.addObject("selectUserfilenum", selectUserfilenum);
+	            }
+	            else
+	            {
+	            	String username = userDetail.getUsername();
+	            	uname = username;
+	    			List userinfo = loginService.getUserinfo(username);
+	    			model.addObject("userinfo", userinfo);
+	    			//filenum
+	    			String selectUserfilenum = loginService.selectUserfilenum(username);
+	    			model.addObject("selectUserfilenum", selectUserfilenum);
+	            }
+	        }
+		}
+		
+		if(loginService.userlogincheck(uname).equals("1"))
+		{
+			model.setViewName("govdetail");
+		}
+		else
+		{
+			model.clear();
+			model.setViewName("unitSetting");
+		}
+		
+		return model;
+	}
+	@RequestMapping(value = "/filedetail", method = RequestMethod.GET)
+	public ModelAndView filedetailPage() {
+		
+		ModelAndView model = new ModelAndView();
+		
+		model.setViewName("filedetail");
+		
+		return model;
+	}
+	/*@RequestMapping(value = "/filelist", method = RequestMethod.GET)
+	public ModelAndView filelistPage() {
+		
+		ModelAndView model = new ModelAndView();
+		
+		model.setViewName("filelistWithGovdetail");
+		
+		return model;
+	}*/
+	@RequestMapping(value = "/inventory", method = RequestMethod.GET)//filelist
+	public ModelAndView inventoryPage() {
+		
+		ModelAndView model = new ModelAndView();
+		
+		model.setViewName("inventory");
+		
+		return model;
+	}
+	@RequestMapping(value = "/government", method = RequestMethod.GET)//govlist
+	public ModelAndView governmentPage() {
+		
+		ModelAndView model = new ModelAndView();
+		List userlist= loginService.selectUserlist();
+		model.addObject("userlist", userlist);
+		model.setViewName("unit");
+		
+		return model;
+	}
+	@RequestMapping(value = "/governmentsetting", method = RequestMethod.GET)
+	public ModelAndView governmentsettingPage() {
+		
+		ModelAndView model = new ModelAndView();
+		
+		model.setViewName("unitSetting");
+		
+		return model;
+	}
+	@RequestMapping(value = "/fileupload", method = RequestMethod.GET)
+	public ModelAndView fileuploadPage() {
+		
+		ModelAndView model = new ModelAndView();
+		
+		model.setViewName("upload");
+		
+		return model;
+	}
+	//----------------------------------------
 	@RequestMapping(value = "/delete", method = RequestMethod.POST)
 	public ModelAndView deletePage(HttpServletRequest request,
 			HttpServletResponse response) {
@@ -114,7 +233,35 @@ public class LoginController {
 		return model;
 
 	}
-	
+	@RequestMapping(value = "/updategov", method = RequestMethod.POST)
+	public ModelAndView updategovPage(HttpServletRequest request,
+			HttpServletResponse response) {
+		
+		ModelAndView model = new ModelAndView();
+		
+		String unitname = (String) request.getParameter("unitname");
+		String unityear = (String) request.getParameter("unityear");
+		String unitphone = (String) request.getParameter("unitphone");
+		String unitresponse = (String) request.getParameter("unitresponse");
+		String unitaddress = (String) request.getParameter("unitaddress");
+		String uniturl = (String) request.getParameter("uniturl");
+		//loginService.insertUser(username,password,email,"1");
+		System.out.println(unitaddress+","+unitname+","+unitphone+","+unitresponse+","+uniturl+","+unityear);
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if (!(auth instanceof AnonymousAuthenticationToken)) {
+			UserDetails userDetail = (UserDetails) auth.getPrincipal();
+			for (GrantedAuthority authority : userDetail.getAuthorities()) {	           
+	            String username = userDetail.getUsername();
+	            loginService.updatetUser(unitaddress, unitname, unitphone, unitresponse, uniturl, unityear, username);
+	        }
+		}
+		
+		RedirectView redirectView = new RedirectView("/govdetail");
+		model.setView(redirectView);
+		//model.setViewName("unitSetting");
+		return model;
+		
+	}
 	@RequestMapping(value = "/insertpage", method = RequestMethod.POST)
 	public ModelAndView insertPage(HttpServletRequest request,
 			HttpServletResponse response) {
@@ -167,11 +314,11 @@ public class LoginController {
 
 		ModelAndView model = new ModelAndView();
 		if (error != null) {
-			model.addObject("error", "Invalid username and password!");
+			model.addObject("error", "帳號或密碼已註冊過!");
 		}
 
 		if (logout != null) {
-			model.addObject("msg", "You've been logged out successfully.");
+			model.addObject("msg", "登出成功");
 		}
 
 		model.setViewName("login");

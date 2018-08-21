@@ -3,7 +3,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@page session="true"%>
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
@@ -23,7 +22,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <sec:authorize access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')">
+    <sec:authorize access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')">
       <li class="nav-item active">
         <a class="nav-link" href="/fileupload">上傳檔案</a>
       </li>
@@ -70,29 +69,42 @@
   </div>
   <hr>
 </div>
-<div class="container">
-  <div>
-	  <h3>登入</h3>
-	 <form name='loginForm'
-			action="<c:url value='/j_spring_security_check' />" method='POST'>
-	  <div class="form-group">
-		<label for="exampleInputEmail1">帳號</label>
-		<input type="text" name='username' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="請輸入帳號">
-	  </div>
-	  <div class="form-group">
-		<label for="exampleInputPassword1">密碼</label>
-		<input type="password" name='password' class="form-control" id="exampleInputPassword1" placeholder="請輸入密碼">
-	  </div>
-	  <tr>
-		<td colspan='2'><input class="btn btn-primary" name="submit" type="submit"
-		value="送出" /></td>
-	  </tr>
-	  <input type="hidden" name="${_csrf.parameterName}"
-				value="${_csrf.token}" />
-	</form>
 
-  </div>
+<div class="container col-md-6">
+  <h3>檔案詳細列表</h3>
   <hr>
+  <div class="">
+    <div class="row col-sm-8">
+      <div class="col-sm-6">
+		  <p><strong>出版品型態</strong></p>
+		  <p><strong>描述</strong></p>
+		  <p><strong>書籍名稱</strong></p>
+		  <p><strong>作者/編者</strong></p>
+		  <p><strong>出版年月</strong></p>
+		  <p><strong>出版地</strong></p>
+		  <p><strong>ISBN</strong></p>
+		  <p><strong>授權(費用)</strong></p>
+		  <p><strong>類型</strong></p>
+		  <p><strong>標籤</strong></p>
+		  <p><strong>上傳日期</strong></p>
+		  <p><strong>檔案下載</strong></p>
+	  </div>
+	  <div class="col-sm-6">
+		  <p>全文電子檔</p>
+		  <p>闡述文化內容</p>
+		  <p>澎湖文化</p>
+		  <p>王大明</p>
+		  <p>2015/8</p>
+		  <p>澎湖縣</p>
+		  <p>XXXXXXXXXX-X</p>
+		  <p>是,5000</p>
+		  <p>食,住</p>
+		  <p>#抱礅#海#石滬</p>
+		  <p>2018/05/20</p>
+		  <p><a href="#">下載</a></p>
+	  </div>
+    </div>
+  </div>
   <div class="row">
     <div class="text-center col-md-12 col-md-offset-3">
       <p>Copyright &copy; 2018 &middot; IDELab </p>

@@ -3,7 +3,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@page session="true"%>
 <html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
@@ -70,27 +69,34 @@
   </div>
   <hr>
 </div>
-<div class="container">
-  <div>
-	  <h3>登入</h3>
-	 <form name='loginForm'
-			action="<c:url value='/j_spring_security_check' />" method='POST'>
-	  <div class="form-group">
-		<label for="exampleInputEmail1">帳號</label>
-		<input type="text" name='username' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="請輸入帳號">
-	  </div>
-	  <div class="form-group">
-		<label for="exampleInputPassword1">密碼</label>
-		<input type="password" name='password' class="form-control" id="exampleInputPassword1" placeholder="請輸入密碼">
-	  </div>
-	  <tr>
-		<td colspan='2'><input class="btn btn-primary" name="submit" type="submit"
-		value="送出" /></td>
-	  </tr>
-	  <input type="hidden" name="${_csrf.parameterName}"
-				value="${_csrf.token}" />
-	</form>
-
+<div class="container col-md-6">
+  <div class="row text-center">
+    <div class="col-md-12 col-md-offset-3">
+    <c:forEach items="${userinfo}" var="p">
+		<h3>${p.gName}</h3>
+	</c:forEach>
+	</div>
+  </div>
+  <hr>
+  <div class="row col-md-12">
+    <div class="col-sm-6 text-center"> 
+		<h5>基本資料</h5>
+		<c:forEach items="${userinfo}" var="p">
+			<div class="text-justify">
+				<p><strong>設立年代</strong>&nbsp;${p.year}</p>
+				<p><strong>負責人</strong>&nbsp;${p.reponse}</p>
+				<p><strong>電話</strong>&nbsp;${p.phone}</p>
+				<p><strong>地址</strong>&nbsp;${p.address}</p>
+				<p><strong>網址</strong>&nbsp;<a href=${p.url}>${p.url}</a></p>
+			</div>
+		</c:forEach>
+	</div>
+	<div class="text-center col-sm-6"> 
+		<div>
+			<p>您有<h4>${selectUserfilenum}</h4>個文化檔案</p>
+		</div>
+	  <button class="btn btn-info" onclick="location.href='upload.html'">新增資料</button>
+	</div>
   </div>
   <hr>
   <div class="row">
