@@ -14,8 +14,8 @@
 <link href="/resources/css/style.css" rel="stylesheet" type="text/css">
 
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark co-blue">
+<body class="font-ch">
+<nav class="navbar navbar-expand-lg navbar-dark co-drak mainHeader">
   <a class="navbar-brand" href="/govdetail">首頁</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -61,7 +61,7 @@
     </ul>
   </div>
 </nav>
-<div class="container-fluid">
+<div class="container-fluid co-white">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <h1 class="text-center">「澎湖民藝復興計畫」盤點網</h1>
@@ -69,12 +69,12 @@
   </div>
   <hr>
 </div>
-<div class="container">
+<div class="main container">
   <h3>單位列表</h3>
   <div class="row">
     <div class="text-center col-md-12">
         <table class="table">
-		  <thead class="thead-dark">
+		  <thead class="co-orginal-dark">
 			<tr>
 			  <!-- <th scope="col">#</th> -->
 			  <th scope="col">分類</th>
@@ -99,13 +99,13 @@
 		</table>
     </div>
   </div>
-  <hr>
+</div>
+<div class="footerArea container-fluid navbar-dark co-light">
   <div class="row">
     <div class="text-center col-md-12 col-md-offset-3">
       <p>Copyright &copy; 2018 &middot; IDELab </p>
     </div>
   </div>
-  <hr>
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="/resources/js/jquery-1.11.3.min.js"></script>
