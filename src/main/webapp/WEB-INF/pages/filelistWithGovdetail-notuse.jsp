@@ -14,8 +14,8 @@
 <link href="/resources/css/style.css" rel="stylesheet" type="text/css">
 
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark co-blue">
+<body class="font-ch">
+<nav class="navbar navbar-expand-lg navbar-dark co-dark mainHeader">
   <a class="navbar-brand" href="index.html">首頁</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -43,7 +43,7 @@
     </ul>
   </div>
 </nav>
-<div class="container-fluid">
+<div class="container-fluid co-white">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <h1 class="text-center">「澎湖民藝復興計畫」盤點網</h1>
@@ -51,7 +51,7 @@
   </div>
   <hr>
 </div>
-<div class="container col-md-6">
+<div class="container col-md-6 co-transparent">
   <div class="row text-center">
     <div class="col-md-12 col-md-offset-3">
 		<h3>單位A</h3>
@@ -76,13 +76,13 @@
 	  <button class="btn btn-info" onclick="location.href='upload.html'">新增資料</button>
 	</div>
   </div>
-  <hr>
+</div>
+<div class="footerArea container-fluid navbar-dark co-light">
   <div class="row">
     <div class="text-center col-md-12 col-md-offset-3">
       <p>Copyright &copy; 2018 &middot; IDELab </p>
     </div>
   </div>
-  <hr>
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="/resources/js/jquery-1.11.3.min.js"></script>

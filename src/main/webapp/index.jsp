@@ -14,8 +14,8 @@
 <link href="/resources/css/style.css" rel="stylesheet" type="text/css">
 
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark co-blue">
+<body class="font-ch co-background">
+<nav class="navbar navbar-expand-lg navbar-dark co-drak mainHeader">
   <a class="navbar-brand" href="/govdetail">首頁</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -61,13 +61,14 @@
     </ul>
   </div>
 </nav>
-<div class="container col-md-6">
+<div class="container-fluid co-white">
   <div class="row text-center">
     <div class="col-md-12 col-md-offset-3">
 		<h1>「澎湖民藝復興計畫」盤點網</h1>
 	</div>
   </div>
-  <hr>
+</div>
+<div class="main container co-transparent">
   <div class="row col-md-12">
     <div class="col-sm-6 text-center"> 
 		<h5>計畫目的</h5>
@@ -96,7 +97,8 @@
 		</div>
 	</div>
   </div>
-  <hr>
+</div>
+<div class="footerArea container-fluid navbar-dark co-light">
   <div class="row">
     <div class="text-center col-md-12 col-md-offset-3">
       <p>Copyright &copy; 2018 &middot; IDELab </p>

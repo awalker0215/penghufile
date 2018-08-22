@@ -1,28 +1,48 @@
 @charset "utf-8";
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
 /* CSS Document */
 
 /* Color */
-.co-yellow-light {
-	background-color: #f3cd05;
+.co-spotlight {
+	background-color: #8A140E;
 }
 
-.co-yellow {
-	background-color: #f49f05;
+.co-light {
+	background-color: #B9E5F3;
 }
 
-.co-orange {
-	background-color: #f18904;
+.co-orginal {
+	background-color: #53C0F0;
 }
 
-.co-orange-dark {
-	background-color: #bda589;
+.co-orginal-dark {
+	color: #fff;
+	background-color: #052B3C;
 }
 
-.co-blue {
-	background-color: #36688D;
-	color: #FFFFFF;
+.co-drak {
+	background-color: #51A2D9;
 }
 
+.co-white {
+	background-color: #E0E8F0;
+}
+
+.co-background {
+	width: 100%;
+	background-image: url('/resources/pic/bg.png');  /*??????*/
+}
+
+.co-transparent {
+	background: rgb(255, 255, 255) none repeat scroll 0 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.298), 0 0 40px rgba(0, 0, 0, 0.098) inset;
+    margin: 10px auto;
+    padding: 1.5em;
+}
+
+.font-ch {
+	font-family: 'Noto Sans TC', sans-serif;
+}
 
 /* The checkarea */
 .checkarea {
@@ -149,9 +169,20 @@
 	margin: 5px 0px;
 }
 
+.mainHeader {
+	position: sticky;
+    top: 0px;
+    z-index: 999;
+}
+
+.main {
+	padding-top: 30px;
+	padding-bottom: 50px;
+	min-height: 100%;
+}
+
 .footerArea {
 	box-sizing: border-box;
-    position: absolute;
+    position: fixed;
     bottom: 0;
-	
 }

@@ -14,8 +14,8 @@
 <link href="/resources/css/style.css" rel="stylesheet" type="text/css">
 
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark co-blue">
+<body class="font-ch">
+<nav class="navbar navbar-expand-lg navbar-dark co-drak mainHeader">
   <a class="navbar-brand" href="/govdetail">首頁</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -61,7 +61,7 @@
     </ul>
   </div>
 </nav>
-<div class="container-fluid">
+<div class="container-fluid co-white">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <h1 class="text-center">「澎湖民藝復興計畫」盤點網</h1>
@@ -70,47 +70,71 @@
   <hr>
 </div>
 
-<div class="container col-md-6">
+<div class="main container col-md-6">
   <h3>檔案詳細列表</h3>
-  <hr>
   <div class="">
-    <div class="row col-sm-8">
-      <div class="col-sm-6">
-		  <p><strong>出版品型態</strong></p>
-		  <p><strong>描述</strong></p>
-		  <p><strong>書籍名稱</strong></p>
-		  <p><strong>作者/編者</strong></p>
-		  <p><strong>出版年月</strong></p>
-		  <p><strong>出版地</strong></p>
-		  <p><strong>ISBN</strong></p>
-		  <p><strong>授權(費用)</strong></p>
-		  <p><strong>類型</strong></p>
-		  <p><strong>標籤</strong></p>
-		  <p><strong>上傳日期</strong></p>
-		  <p><strong>檔案下載</strong></p>
-	  </div>
-	  <div class="col-sm-6">
-		  <p>全文電子檔</p>
-		  <p>闡述文化內容</p>
-		  <p>澎湖文化</p>
-		  <p>王大明</p>
-		  <p>2015/8</p>
-		  <p>澎湖縣</p>
-		  <p>XXXXXXXXXX-X</p>
-		  <p>是,5000</p>
-		  <p>食,住</p>
-		  <p>#抱礅#海#石滬</p>
-		  <p>2018/05/20</p>
-		  <p><a href="#">下載</a></p>
-	  </div>
+    <div class="row">
+		<table class="table">
+		  <tbody>
+			<tr>
+			  <td scope="col">出版品型態</td>
+			  <td> 全文電子檔</td>
+			</tr>
+			<tr>
+			  <td scope="col">描述 </td>
+			  <td>闡述文化內容 </td>
+			</tr>
+			<tr>
+			  <td scope="col">書籍名稱 </td>
+			  <td>澎湖文化 </td>
+			</tr>
+			<tr>
+			  <td scope="col">作者/編者 </td>
+			  <td>王大明 </td>
+			</tr>
+			<tr>
+			  <td scope="col">出版年月 </td>
+			  <td>2015/8 </td>
+			</tr>
+			<tr>
+			  <td scope="col">出版地 </td>
+			  <td>澎湖縣 </td>
+			</tr>
+			<tr>
+			  <td scope="col">ISBN </td>
+			  <td>XXXXXXXXXX-X </td>
+			</tr>
+			<tr>
+			  <td scope="col"> 授權(費用) </td>
+			  <td>是,5000 </td>
+			</tr>
+			<tr>
+			  <td scope="col">類型 </td>
+			  <td>食,住 </td>
+			</tr>
+			<tr>
+			  <td scope="col">標籤 </td>
+			  <td> #抱礅#海#石滬</td>
+			</tr>
+			<tr>
+			  <td scope="col">上傳日期 </td>
+			  <td>2018/05/20 </td>
+			</tr>
+			<tr>
+			  <td scope="col">檔案下載 </td>
+			  <td><a href="#">下載</a></td>
+			</tr>
+		  </tbody>
+		</table>
     </div>
   </div>
+</div>  
+<div class="footerArea container-fluid navbar-dark co-light">
   <div class="row">
     <div class="text-center col-md-12 col-md-offset-3">
       <p>Copyright &copy; 2018 &middot; IDELab </p>
     </div>
   </div>
-  <hr>
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="/resources/js/jquery-1.11.3.min.js"></script>
