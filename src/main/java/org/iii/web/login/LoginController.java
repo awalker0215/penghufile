@@ -1,5 +1,6 @@
 package org.iii.web.login;
 
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -314,11 +316,11 @@ public class LoginController {
 
 		ModelAndView model = new ModelAndView();
 		if (error != null) {
-			model.addObject("error", "±b∏π©Œ±KΩX§wµ˘•UπL!");
+			model.addObject("error", "Â∏≥ËôüÊàñÂØÜÁ¢ºÂ∑≤Ë®ªÂÜäÈÅé!");
 		}
 
 		if (logout != null) {
-			model.addObject("msg", "µn•X¶®•\");
+			model.addObject("msg", "ÁôªÂá∫ÊàêÂäü");
 		}
 
 		model.setViewName("login");
@@ -345,6 +347,22 @@ public class LoginController {
 		model.setViewName("403");
 		return model;
 
+	}
+	//--------file upload------------
+	@RequestMapping(value = "/uploadfile", method = RequestMethod.POST)
+	public ModelAndView uploadfilePage(HttpServletRequest request,
+			HttpServletResponse response/*,@RequestParam("file") MultipartFile file*/) {
+		
+		ModelAndView model = new ModelAndView();
+		
+		
+		
+		
+		RedirectView redirectView = new RedirectView("/govdetail");
+		model.setView(redirectView);
+		//model.setViewName("unitSetting");
+		return model;
+		
 	}
 
 }

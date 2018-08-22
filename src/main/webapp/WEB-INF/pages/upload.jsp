@@ -74,6 +74,7 @@
 </div>
 <div class="container col-md-6">
   <br>
+  <form method="POST" action="uploadfile" enctype="multipart/form-data"><!-- enctype="multipart/form-data"> -->
   <div class="row">
     <div class="text-center col-md-12">
 	  <div class="row col-md-12">
@@ -89,7 +90,7 @@
 			<input type="radio" checked="checked" name="RadioForFile" id="content">
 			<span class="checkradio"></span>
 				<div class="custom-file" id="inputContent">
-				  <input type="file" class="custom-file-input" id="inputContentFile">
+				  <input type="file" name="file" class="custom-file-input" id="inputContentFile">
 				  <label class="custom-file-label" for="inputContentFile">選擇檔案</label>
 				</div>
 			</label>
@@ -97,7 +98,7 @@
 			  <input type="radio" name="RadioForFile" id="appendix">
 			  <span class="checkradio"></span>
 			  	<div class="custom-file hiddenArea" id="inputAppendix">
-				  <input type="file" class="custom-file-input" id="inputAppendixFile">
+				  <input type="file" name="file" class="custom-file-input" id="inputAppendixFile">
 				  <label class="custom-file-label" for="inputAppendixFile">選擇檔案</label>
 				</div>
 			</label>
@@ -722,10 +723,14 @@
   </div>
   <div class="row">
     <div class="col-sm-12 text-center">
-      <button type="button" class="btn btn-info btn-sm">發布</button>
+      <button type="submit" value="Upload" class="btn btn-info btn-sm">發布</button>
+      <input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token}" /> 
       <!-- <button type="button" class="btn btn-success btn-sm"></button> -->
     </div>
   </div>
+  </form>
+  <!-- ----------------- -->
   <hr>
 
   <div class="row">
