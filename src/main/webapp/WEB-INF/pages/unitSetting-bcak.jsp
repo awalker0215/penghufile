@@ -75,31 +75,31 @@
 	<h3>基本資料</h3>
   	<div class="">
 	  
-	 <form name='insertForm' action="updategov" method='POST' onsubmit="return checkData()">
+	 <form name='insertForm' action="updategov" method='POST'>
 	  <div class="form-group row"><!--class="text-center form-control"form-group row-->
 		<label class="col-sm-4 col-form-label">單位名稱</label>
 		<div class="col-sm-8">
-			<input type="text" name="unitname" class="form-control fineTuneTopInput" id="unitname" placeholder="">
+			<input type="text" name="unitname" class="form-control fineTuneTopInput" id="" placeholder="">
 		</div>
 		<label class="col-sm-4 col-form-label">設立年代</label>
 		<div class="col-sm-8">
-			<input type="number" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" min="0" name="unityear" placeholder="" class="form-control fineTuneTopInput" id="unityear" >
+			<input type="text" name="unityear" placeholder="" class="form-control fineTuneTopInput" id="" >
 		</div>
 		<label class="col-sm-4 col-form-label">負責人</label>
 		<div class="col-sm-8">
-			<input type="text" name="unitresponse" class="form-control fineTuneTopInput" id="unitresponse">
+			<input type="text" name="unitresponse" class="form-control fineTuneTopInput" id="datepicker">
 		</div> 
 		<label class="col-sm-4 col-form-label">連絡電話</label>
 		<div class="col-sm-8">
-			<input type="text" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^0-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^0-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" name="unitphone" class="form-control fineTuneTopInput" id="unitphone">
+			<input type="text" name="unitphone" class="form-control fineTuneTopInput" id="">
 		</div>
 		<label class="col-sm-4 col-form-label">單位地址</label>
 		<div class="col-sm-8">
-			<input type="text" name="unitaddress" class="form-control fineTuneTopInput" id="unitaddress">
+			<input type="text" name="unitaddress" class="form-control fineTuneTopInput" id="">
 		</div>
 		<label class="col-sm-4 col-form-label">單位網址</label>
 		<div class="col-sm-8">
-			<input type="text" name="uniturl" class="form-control fineTuneTopInput" id="uniturl">
+			<input type="text" name="uniturl" class="form-control fineTuneTopInput" id="">
 		</div>
 	  </div>
 	  <input type="submit" class="btn btn-primary" value="送出">
@@ -121,6 +121,5 @@
 
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="/resources/js/bootstrap.js"></script>
-<script src="/resources/js/unitSetting-submit.js"></script>
 </body>
 </html>
