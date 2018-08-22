@@ -108,13 +108,13 @@
 	</form>
 
   </div>
-</div>
-<div class="footerArea container-fluid navbar-dark co-light">
+  <hr>
   <div class="row">
     <div class="text-center col-md-12 col-md-offset-3">
       <p>Copyright &copy; 2018 &middot; IDELab </p>
     </div>
   </div>
+  <hr>
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="/resources/js/jquery-1.11.3.min.js"></script>

@@ -17,7 +17,7 @@
 </head>
 <body class="font-ch">
 <nav class="navbar navbar-expand-lg navbar-dark co-drak mainHeader">
-  <a class="navbar-brand" href="/govdetail">首頁</a>
+  <a class="navbar-brand" href="/">首頁</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

@@ -73,6 +73,34 @@
   <hr>
 </div>
 <div class="main container col-md-6">
+  <div class="row">
+    <div class="text-center col-md-11" id="publicationDetail"><!--col-sm-12 text-center-->
+      <h5>出版品基本資料</h5>
+      <div class="form-group row"><!--class="text-center form-control"form-group row-->
+		<label class="col-sm-4 col-form-label">書籍名稱</label>
+			<div class="col-sm-8">
+				<input type="text" class="form-control fineTuneTopInput" id="" placeholder="">
+			</div>
+			<label class="col-sm-4 col-form-label">作者/編者</label>
+			<div class="col-sm-8">
+				<input type="text" class="form-control fineTuneTopInput" id="">
+			</div>
+			<label class="col-sm-4 col-form-label">出版年月</label>
+			<div class="col-sm-8">
+				<input type="text" class="form-control fineTuneTopInput" id="datepicker">
+			</div> 
+		    <label class="col-sm-4 col-form-label">出版地</label>
+			<div class="col-sm-8">
+				<input type="text" class="form-control fineTuneTopInput" id="">
+			</div>
+		    <label class="col-sm-4 col-form-label">ISBN</label>
+			<div class="col-sm-8">
+				<input type="text" class="form-control fineTuneTopInput" id="">
+			</div>
+	  </div>
+    </div>
+      <br>
+  </div>
   <br>
   <div class="row">
     <div class="text-center col-md-12">
@@ -144,33 +172,6 @@
 		  </div>
 	  </div>
 	</div>
-  </div>
-  <div class="row">
-    <div class="text-center col-md-11" id="publicationDetail"><!--col-sm-12 text-center-->
-      <h5>出版品基本資料</h5>
-      <div class="form-group row"><!--class="text-center form-control"form-group row-->
-		<label class="col-sm-4 col-form-label">書籍名稱</label>
-			<div class="col-sm-8">
-				<input type="text" class="form-control fineTuneTopInput" id="" placeholder="">
-			</div>
-			<label class="col-sm-4 col-form-label">作者/編者</label>
-			<div class="col-sm-8">
-				<input type="text" class="form-control fineTuneTopInput" id="">
-			</div>
-			<label class="col-sm-4 col-form-label">出版年月</label>
-			<div class="col-sm-8">
-				<input type="text" class="form-control fineTuneTopInput" id="datepicker">
-			</div> 
-		    <label class="col-sm-4 col-form-label">出版地</label>
-			<div class="col-sm-8">
-				<input type="text" class="form-control fineTuneTopInput" id="">
-			</div>
-		    <label class="col-sm-4 col-form-label">ISBN</label>
-			<div class="col-sm-8">
-				<input type="text" class="form-control fineTuneTopInput" id="">
-			</div>
-	  </div>
-    </div>
   </div>
   <br>
   <div class="row">
@@ -735,7 +736,7 @@
   </div>
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-<script src="js/jquery-1.11.3.min.js"></script>
+<script src="/resources/js/jquery-1.11.3.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="/resources/js/bootstrap.js"></script>

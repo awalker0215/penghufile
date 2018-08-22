@@ -314,11 +314,11 @@ public class LoginController {
 
 		ModelAndView model = new ModelAndView();
 		if (error != null) {
-			model.addObject("error", "帳號或密碼已註冊過!");
+			model.addObject("error", "7");
 		}
 
 		if (logout != null) {
-			model.addObject("msg", "登出成功");
+			model.addObject("msg", "7");
 		}
 
 		model.setViewName("login");
