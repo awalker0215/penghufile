@@ -16,7 +16,7 @@
 </head>
 <body class="font-ch co-background">
 <nav class="navbar navbar-expand-lg navbar-dark co-drak mainHeader">
-  <a class="navbar-brand" href="/govdetail">首頁</a>
+  <a class="navbar-brand" href="/">首頁</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -71,9 +71,9 @@
 <div class="main container co-transparent">
   <div class="row col-md-12">
     <div class="col-sm-6 text-center"> 
-		<h5>計畫目的</h5>
+		<h4>計畫目的</h4>
 		<div class="text-justify">
-			<p>澎湖是臺灣地區最早開發的區域，也是唯一的離島縣份，由於澎湖在不同
+			<p class="font-height">澎湖是臺灣地區最早開發的區域，也是唯一的離島縣份，由於澎湖在不同
 			時期一直保持著跟大陸、臺灣之間的聯繫交流，基本上受到來自各方的交流影
 			響。但是孤懸海上的地理特性以及群島組成的社會形態，卻又形成某種地域上
 			的封閉性，迫使澎湖必須更仰賴在地資源與條件的開發利用。這就使得澎湖在
@@ -83,19 +83,19 @@
 			做為未來研提轉譯應用計畫的基礎。</p>
 		</div>
 	</div>
-	<div class="text-center col-sm-6"> 
-		<div>
-			<h5>計畫主持人</h5>
-			<p>林寶安</p>
-		</div>
-	    <div>
-			<h5>協同主持人</h5>
-			<p>呂政豪</p>
-			<p>李宗儒</p>
-			<p>許玉河</p>
-			<p>胡蘊玉</p>
-		</div>
-	</div>
+	<div class="text-left col-sm-6 fineTuneInput"> 
+    <div>
+      <h4>計畫主持人</h4>
+      <p><strong class="font-bigger">林寶安</strong> &middot; 國立澎湖科技大學通識教育中心教授</p>
+    </div>
+      <div>
+      <h4>協同主持人</h4>
+      <p><strong class="font-bigger">許玉河</strong> &middot; 澎湖縣隘門國民小學老師</p>
+      <p><strong class="font-bigger">呂政豪</strong> &middot; 國立澎湖科技大學觀光休閒系助理教授</p>
+      <p><strong class="font-bigger">李宗儒</strong> &middot; 國立澎湖科技大學資訊管理系助理教授</p>
+      <p><strong class="font-bigger">胡蘊玉</strong> &middot; 國立澎湖科技大學通識教育中心助理教授</p>
+    </div>
+  </div>
   </div>
 </div>
 <div class="footerArea container-fluid navbar-dark co-light">

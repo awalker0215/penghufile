@@ -30,7 +30,7 @@
 
 .co-background {
 	width: 100%;
-	background-image: url('/resources/pic/bg.png');  /*??????*/
+	background-image: url('../pic/bg.png');
 }
 
 .co-transparent {
@@ -42,6 +42,14 @@
 
 .font-ch {
 	font-family: 'Noto Sans TC', sans-serif;
+}
+
+.font-bigger {
+    font-size: 1.2em;
+}
+
+.font-height {
+    line-height: 1.7em;
 }
 
 /* The checkarea */
@@ -178,7 +186,7 @@
 .main {
 	padding-top: 30px;
 	padding-bottom: 50px;
-	min-height: 100%;
+	/*min-height: 100%;*/
 }
 
 .footerArea {

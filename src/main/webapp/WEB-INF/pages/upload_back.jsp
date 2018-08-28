@@ -87,32 +87,48 @@
 		  </div>
 		    <label class="checkarea">全文電子檔
 			<input type="radio" checked="checked" name="RadioForFile" id="content">
-			<span class="checkradio"></span>			
+			<span class="checkradio"></span>
+				<div class="custom-file" id="inputContent">
+				  <input type="file" name="file" class="custom-file-input" id="inputContentFile">
+				  <label class="custom-file-label" for="inputContentFile">選擇檔案</label>
+				</div>
 			</label>
 			<label class="checkarea">附錄電子檔
 			  <input type="radio" name="RadioForFile" id="appendix">
-			  <span class="checkradio"></span>			  	
-			</label>
-			<div class="text-center">
-				<label class="checkarea">影音光碟
-				  <input type="radio" name="RadioForFile" id="disk">
-				  <span class="checkradio"></span>
-				</label>
-			</div>
-			<div class="custom-file" id="inputContent">
-				  <input type="file" name="file" class="custom-file-input" id="inputContentFile">
-				  <label class="custom-file-label" for="inputContentFile">選擇檔案，限PDF，RMVB</label>
+			  <span class="checkradio"></span>
+			  	<div class="custom-file hiddenArea" id="inputAppendix">
+				  <input type="file" class="custom-file-input" id="inputAppendixFile">
+				  <label class="custom-file-label" for="inputAppendixFile">選擇檔案</label>
 				</div>
+			</label>
 			<label class="checkarea">紙本
 			  <input type="radio" name="RadioForFile" id="paper">
 			  <span class="checkradio"></span>
-			</label>			
+			</label>
 			<div class="text-center">
 				<label class="checkarea">電子書
 				  <input type="radio" name="RadioForFile" id="Ebook">
 				  <span class="checkradio"></span>
 				</label>
-			</div>			
+				<div class="form-group row col-md-12 text-center">
+					<!-- <label class="col-sm-4 col-form-label">檔案位址</label> -->
+					<div class="col-sm-12 fineTuneInput hiddenArea" id="inputEbookURL">
+					  <input type="text" class="form-control" id="" placeholder="檔案位址，如：http://">
+					</div>
+				</div>
+			</div>	
+			<div class="text-center">
+				<label class="checkarea">影音光碟
+				  <input type="radio" name="RadioForFile" id="disk">
+				  <span class="checkradio"></span>
+				</label>
+				<div class="form-group row col-md-12 text-center">
+					<!-- <label class="col-sm-4 col-form-label">檔案位址</label> -->
+					<div class="col-sm-12 fineTuneInput hiddenArea" id="inputDiskURL">
+					  <input type="text" class="form-control" id="" placeholder="檔案位址，如：http://">
+					</div>
+				</div>
+			</div>
 			<div class="text-center">
 				<label class="checkarea">其他
 				  <input type="radio" name="RadioForFile" id="other">
@@ -120,7 +136,7 @@
 				</label>
 				<div class="form-group row col-md-12 text-center">
 					<!-- <label class="col-sm-4 col-form-label">檔案位址</label> -->
-					<div class="col-sm-12 fineTuneInput hiddenArea" id="fileurl">
+					<div class="col-sm-12 fineTuneInput hiddenArea" id="inputOther">
 					  <input type="text" class="form-control" id="" placeholder="檔案位址，如：http://">
 					</div>
 				</div>
@@ -172,7 +188,13 @@
 				<label class="col-sm-3 col-form-label">費用(新臺幣)</label>
 				<div class="col-sm-8">
 				  	<div class="input-group number-spinner">
-						<input type="number" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^0-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^0-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" min="0" class="form-control text-center" value="0">
+						<span class="input-group-btn">
+							<button class="btn btn-default" data-dir="dwn"><strong>-</strong></button>
+						</span>
+						<input type="text" class="form-control text-center" value="0">
+						<span class="input-group-btn">
+							<button class="btn btn-default" data-dir="up"><strong>+</strong></button>
+						</span>
 					</div>
 				</div>
 			  </div>

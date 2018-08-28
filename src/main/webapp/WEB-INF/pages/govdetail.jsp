@@ -10,8 +10,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Publisher</title>
 
-<link href="/resources/css/bootstrap.min.css" rel="stylesheet">
-<link href="/resources/css/style.css" rel="stylesheet" type="text/css">
+<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+<link href="resources/css/style.css" rel="stylesheet" type="text/css">
 
 </head>
 <body class="font-ch co-background">
@@ -95,7 +95,7 @@
 		<div>
 			<p>您有<h4>${selectUserfilenum}</h4>個文化檔案</p>
 		</div>
-	  <button class="btn btn-info" onclick="location.href='/fileupload'">新增資料</button>
+	  <button class="btn btn-info" onclick="location.href='fileupload'">新增資料</button>
 	</div>
   </div>
 </div>

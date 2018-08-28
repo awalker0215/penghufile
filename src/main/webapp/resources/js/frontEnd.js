@@ -18,9 +18,8 @@ $(document).on('click', '.number-spinner button', function () {
 $('#other').change( function () {
 	if ($(this).is(':checked'))
     {
-		$("#inputOther").attr('style','display:block');
-		$("#inputContent").attr('style','display:none');
-		$("#inputAppendix").attr('style','display:none');
+		$("#fileurl").attr('style','display:block');
+		$("#inputContent").attr('style','display:none');		
 		$("#inputEbookURL").attr('style','display:none');
 		$("#inputDiskURL").attr('style','display:none');
 		$("#publicationDetail").attr('style','display:none');
@@ -29,9 +28,8 @@ $('#other').change( function () {
 $('#content').change( function () {
 	if ($(this).is(':checked'))
     {
-		$("#inputOther").attr('style','display:none');
-		$("#inputContent").attr('style','display:block');
-		$("#inputAppendix").attr('style','display:none');
+		$("#fileurl").attr('style','display:none');
+		$("#inputContent").attr('style','display:block');		
 		$("#inputEbookURL").attr('style','display:none');
 		$("#inputDiskURL").attr('style','display:none');
 		$("#publicationDetail").attr('style','display:block');
@@ -40,9 +38,8 @@ $('#content').change( function () {
 $('#appendix').change( function () {
 	if ($(this).is(':checked'))
     {
-       	$("#inputOther").attr('style','display:none');
-		$("#inputContent").attr('style','display:none');
-		$("#inputAppendix").attr('style','display:block');
+       	$("#fileurl").attr('style','display:none');
+		$("#inputContent").attr('style','display:block');
 		$("#inputEbookURL").attr('style','display:none');
 		$("#inputDiskURL").attr('style','display:none');
 		$("#publicationDetail").attr('style','display:block');
@@ -51,9 +48,8 @@ $('#appendix').change( function () {
 $('#paper').change( function () {
 	if ($(this).is(':checked'))
     {
-       	$("#inputOther").attr('style','display:none');
-		$("#inputContent").attr('style','display:none');
-		$("#inputAppendix").attr('style','display:none');
+       	$("#fileurl").attr('style','display:none');
+		$("#inputContent").attr('style','display:none');		
 		$("#inputEbookURL").attr('style','display:none');
 		$("#inputDiskURL").attr('style','display:none');
 		$("#publicationDetail").attr('style','display:block');
@@ -62,9 +58,8 @@ $('#paper').change( function () {
 $('#Ebook').change( function () {
 	if ($(this).is(':checked'))
     {
-		$("#inputOther").attr('style','display:none');
-		$("#inputContent").attr('style','display:none');
-		$("#inputAppendix").attr('style','display:none');
+		$("#fileurl").attr('style','display:block');
+		$("#inputContent").attr('style','display:none');		
 		$("#inputEbookURL").attr('style','display:block');
 		$("#inputDiskURL").attr('style','display:none');
 		$("#publicationDetail").attr('style','display:block');
@@ -73,9 +68,8 @@ $('#Ebook').change( function () {
 $('#disk').change( function () {
 	if ($(this).is(':checked'))
     {
-		$("#inputOther").attr('style','display:none');
-		$("#inputContent").attr('style','display:none');
-		$("#inputAppendix").attr('style','display:none');
+		$("#fileurl").attr('style','display:block');//待討論
+		$("#inputContent").attr('style','display:block');//待討論	
 		$("#inputEbookURL").attr('style','display:none');
 		$("#inputDiskURL").attr('style','display:block');
 		$("#publicationDetail").attr('style','display:block');
