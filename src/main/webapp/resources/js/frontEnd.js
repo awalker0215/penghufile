@@ -87,5 +87,26 @@ $('#datepicker').datepicker({
         startDate.setDate(startDate.getDate(new Date(selected.date.valueOf())));
     }); 
 
+$('#verify').change( function () {
+	if ($(this).is(':checked'))
+    {
+		$("#whoVerify").prop( "disabled", false );
+		$("#dateVerify").prop('disabled', false);
+    }
+});
 
+$('#unVerify').change( function () {
+	if ($(this).is(':checked'))
+    {
+		$("#whoVerify").prop( "disabled", true);
+		$("#dateVerify").prop('disabled', true);
+    }
+});
 
+$('#waitForVerify').change( function () {
+	if ($(this).is(':checked'))
+    {
+		$("#whoVerify").prop( "disabled", true);
+		$("#dateVerify").prop('disabled', true);
+    }
+});

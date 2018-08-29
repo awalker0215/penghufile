@@ -84,6 +84,18 @@
 			  <div class="col-sm-8">
 				 <input type="text" class="form-control" id="" placeholder="功能、內容描述">
 			  </div>
+			  <div class="col-sm-12">
+				  <div class="custom-file" id="inputContent">
+					<input type="file" name="file" class="custom-file-input" id="inputContentFile">
+					<label class="custom-file-label" for="inputContentFile">選擇檔案，限PDF，RMVB</label>
+				  </div>
+			  </div>
+			  <div class="col-md-12 hiddenArea" id="fileurl">
+				<!-- <label class="col-sm-4 col-form-label">檔案位址</label> -->
+				<div class="col-sm-12">
+					 <input type="text" class="form-control fineTuneTopInput" id="" placeholder="檔案位址，如：http://">
+				</div>
+			  </div>
 		  </div>
 		    <label class="checkarea">全文電子檔
 			<input type="radio" checked="checked" name="RadioForFile" id="content">
@@ -99,10 +111,6 @@
 				  <span class="checkradio"></span>
 				</label>
 			</div>
-			<div class="custom-file" id="inputContent">
-				  <input type="file" name="file" class="custom-file-input" id="inputContentFile">
-				  <label class="custom-file-label" for="inputContentFile">選擇檔案，限PDF，RMVB</label>
-				</div>
 			<label class="checkarea">紙本
 			  <input type="radio" name="RadioForFile" id="paper">
 			  <span class="checkradio"></span>
@@ -118,12 +126,6 @@
 				  <input type="radio" name="RadioForFile" id="other">
 				  <span class="checkradio"></span>
 				</label>
-				<div class="form-group row col-md-12 text-center">
-					<!-- <label class="col-sm-4 col-form-label">檔案位址</label> -->
-					<div class="col-sm-12 fineTuneInput hiddenArea" id="fileurl">
-					  <input type="text" class="form-control" id="" placeholder="檔案位址，如：http://">
-					</div>
-				</div>
 			</div>
 		  </div>
 	  </div>
@@ -131,8 +133,9 @@
   </div>
   <br>
   <div class="row">
-    <div class="text-center col-md-11" id="publicationDetail"><!--col-sm-12 text-center-->
+    <div class="text-center col-md-11" id="publicationDetail">
       <h5>出版品基本資料</h5>
+      
       <div class="form-group row"><!--class="text-center form-control"form-group row-->
 		<label class="col-sm-4 col-form-label">書籍名稱</label>
 			<div class="col-sm-8">
@@ -146,16 +149,31 @@
 			<div class="col-sm-8">
 				<input type="text" class="form-control fineTuneTopInput" id="datepicker">
 			</div> 
-		    <label class="col-sm-4 col-form-label">出版地</label>
-			<div class="col-sm-8">
-				<input type="text" class="form-control fineTuneTopInput" id="">
-			</div>
 		    <label class="col-sm-4 col-form-label">ISBN</label>
 			<div class="col-sm-8">
 				<input type="text" class="form-control fineTuneTopInput" id="">
 			</div>
+			<label class="col-sm-4 col-form-label">地點資訊</label>
+			<div class="col-sm-8">
+				<input type="text" class="form-control fineTuneTopInput" id="">
+			</div>
+			<label class="col-sm-4 col-form-label">經度</label>
+			<div class="col-sm-8">
+				<input type="text" class="form-control fineTuneTopInput" id="">
+			</div>
+			<label class="col-sm-4 col-form-label">緯度</label>
+			<div class="col-sm-8">
+				<input type="text" class="form-control fineTuneTopInput" id="">
+			</div>
+			<label class="col-sm-4 col-form-label">介紹</label>
+			<div class="col-sm-8">
+				<textarea class="form-control fineTuneTopInput" id=""></textarea>
+			</div>
 	  </div>
     </div>
+    <div class="text-center col-md-11">			
+      	
+     </div>
       <br>
   </div>
   <br>
@@ -174,6 +192,10 @@
 				  	<div class="input-group number-spinner">
 						<input type="number" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^0-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^0-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" min="0" class="form-control text-center" value="0">
 					</div>
+				</div>
+				<label class="col-sm-3 col-form-label">著作權規範</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control fineTuneTopInput" id="">
 				</div>
 			  </div>
 			<label class="checkarea">否
@@ -697,6 +719,38 @@
 		<div class="col-sm-12">
 			<textarea class="form-control" placeholder="#石滬#澎湖"></textarea>
 		</div>
+	  </div>
+    </div>
+  </div>
+<hr>
+  <div class="row">
+    <div class="text-center col-md-12">
+	  <div class="row col-md-12">
+		  <div class="text-center form-control">
+		  <h5>審核狀態</h5>
+		    <label class="checkarea">審核通過
+			<input type="radio" checked="checked" name="radio" id="verify">
+			<span class="checkradio"></span>
+			</label>
+			  <div class="form-group row">
+				<label class="col-sm-3 col-form-label">審核者</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control fineTuneTopInput" id="whoVerify">
+				</div>
+				<label class="col-sm-3 col-form-label">審核日期</label>
+				<div class="col-sm-8">
+					<input type="date" class="form-control fineTuneTopInput" id="dateVerify">
+				</div>
+			  </div>
+			<label class="checkarea">審查不通過
+			  <input type="radio" name="radio" id="unVerify">
+			  <span class="checkradio"></span>
+			</label>
+			<label class="checkarea">待審查
+			  <input type="radio" name="radio" id="waitForVerify">
+			  <span class="checkradio"></span>
+			</label>
+		  </div>
 	  </div>
     </div>
   </div>
